@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiment 2 - Types of CSS</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        .internal-style {
+            color: #2563eb;
+            background-color: #eff6ff;
+            padding: 15px;
+            border-left: 5px solid #2563eb;
+            border-radius: 8px;
+        }
+
+        .internal-heading {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="page-header">
+        <h1>Experiment 2: Cascading Style Sheets</h1>
+        <p>Demonstration of Inline, Internal and External CSS</p>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h2>Types of CSS</h2>
+            <p>
+                CSS is used to control the presentation, layout and appearance
+                of HTML documents. There are three common ways to apply CSS.
+            </p>
+        </section>
+
+        <!-- Inline CSS -->
+        <section class="card">
+            <h2>1. Inline CSS</h2>
+
+            <p style="color: #dc2626; font-size: 18px; font-weight: bold;">
+                This paragraph is styled using Inline CSS.
+            </p>
+
+            <p>
+                Inline CSS is written directly inside an HTML element using
+                the <strong>style</strong> attribute.
+            </p>
+
+            <code>
+                &lt;p style="color: red;"&gt;Inline CSS&lt;/p&gt;
+            </code>
+        </section>
+
+        <!-- Internal CSS -->
+        <section class="card">
+            <h2>2. Internal CSS</h2>
+
+            <div class="internal-style">
+                <h3 class="internal-heading">Internal CSS Example</h3>
+                <p>
+                    This section is styled using CSS written inside the
+                    &lt;style&gt; element of the HTML document.
+                </p>
+            </div>
+
+            <code>
+                &lt;style&gt; .internal-style { color: blue; } &lt;/style&gt;
+            </code>
+        </section>
+
+        <!-- External CSS -->
+        <section class="card external-demo">
+            <h2>3. External CSS</h2>
+
+            <div class="external-box">
+                <h3>External CSS Example</h3>
+                <p>
+                    This section is styled using a separate
+                    <strong>style.css</strong> file.
+                </p>
+            </div>
+
+            <code>
+                &lt;link rel="stylesheet" href="style.css"&gt;
+            </code>
+        </section>
+
+        <!-- Comparison -->
+        <section class="card">
+            <h2>Comparison of CSS Types</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>CSS Type</th>
+                        <th>Location</th>
+                        <th>Advantage</th>
+                        <th>Best Used For</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Inline</td>
+                        <td>Inside HTML element</td>
+                        <td>Quick styling</td>
+                        <td>Specific elements</td>
+                    </tr>
+
+                    <tr>
+                        <td>Internal</td>
+                        <td>&lt;style&gt; section</td>
+                        <td>Single-page styling</td>
+                        <td>Individual webpages</td>
+                    </tr>
+
+                    <tr>
+                        <td>External</td>
+                        <td>Separate .css file</td>
+                        <td>Reusable and organized</td>
+                        <td>Multiple webpages</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="conclusion">
+            <h2>Conclusion</h2>
+            <p>
+                This experiment demonstrates the three major methods of
+                applying CSS: Inline CSS, Internal CSS and External CSS.
+                External CSS is generally preferred for larger projects
+                because it keeps the presentation separate from HTML content.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Backend Development Laboratory | Experiment 2</p>
+    </footer>
+
+</body>
+</html>
