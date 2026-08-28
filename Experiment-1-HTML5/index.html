@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <meta
+        name="description"
+        content="A comprehensive demonstration of HTML5 elements, semantic structure, forms, multimedia, tables and accessibility."
+    >
+    <meta
+        name="keywords"
+        content="HTML5, semantic HTML, forms, multimedia, accessibility, web development"
+    >
+    <meta name="author" content="Student">
+
+    <title>HTML5 Elements Demonstration</title>
+
+    <style>
+        /* ------------------------------
+           GENERAL STYLING
+        ------------------------------ */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f7fb;
+            color: #1f2937;
+        }
+
+        a {
+            color: #2563eb;
+        }
+
+        a:hover {
+            color: #1d4ed8;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ------------------------------
+           HEADER
+        ------------------------------ */
+
+        header {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+        }
+        .student-info {
+    max-width: 600px;
+    margin: 25px auto 0;
+    padding: 18px;
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+}
+
+.student-info p {
+    margin: 5px 0;
+    font-size: 0.95rem;
+}
+
+        /* ------------------------------
+           NAVIGATION
+        ------------------------------ */
+
+        nav {
+            background-color: #111827;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* ------------------------------
+           MAIN CONTENT
+        ------------------------------ */
+
+        main {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        section,
+        article,
+        aside {
+            background-color: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            color: #1e3a8a;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            color: #2563eb;
+            margin: 15px 0 8px;
+        }
+
+        p {
+            margin-bottom: 12px;
+        }
+
+        /* ------------------------------
+           HTML ELEMENT EXAMPLES
+        ------------------------------ */
+
+        .element-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .element-card {
+            padding: 18px;
+            border: 1px solid #dbeafe;
+            border-radius: 8px;
+            background-color: #eff6ff;
+        }
+
+        .element-card strong {
+            color: #1e3a8a;
+        }
+
+        /* ------------------------------
+           LISTS
+        ------------------------------ */
+
+        ul,
+        ol {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        /* ------------------------------
+           TABLE
+        ------------------------------ */
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th,
+        td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1e3a8a;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        /* ------------------------------
+           FORM
+        ------------------------------ */
+
+        form {
+            display: grid;
+            gap: 15px;
+        }
+
+        fieldset {
+            border: 1px solid #cbd5e1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #1e3a8a;
+            padding: 0 8px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #94a3b8;
+            border-radius: 6px;
+            font-size: 1rem;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: 2px solid #2563eb;
+            border-color: #2563eb;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            font-weight: normal;
+        }
+
+        .radio-group input,
+        .checkbox-group input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        button {
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* ------------------------------
+           MULTIMEDIA
+        ------------------------------ */
+
+        .media-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        audio,
+        video {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        figure {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-style: italic;
+            color: #64748b;
+        }
+
+        /* ------------------------------
+           CODE / PREFORMATTED TEXT
+        ------------------------------ */
+
+        pre {
+            background-color: #111827;
+            color: #e5e7eb;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: Consolas, monospace;
+        }
+
+        /* ------------------------------
+           DETAILS
+        ------------------------------ */
+
+        details {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f8fafc;
+            border-radius: 8px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* ------------------------------
+           FOOTER
+        ------------------------------ */
+
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #93c5fd;
+        }
+
+        /* ------------------------------
+           RESPONSIVE DESIGN
+        ------------------------------ */
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section,
+            article,
+            aside {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER: Semantic HTML5 element -->
+<header>
+    <h1>Experiment 1: HTML5 Elements Demonstration</h1>
+
+    <p>
+        Web Development Laboratory
+    </p>
+
+    <div class="student-info">
+        <p><strong>Student Name:</strong>Karanjit Sarkar</p>
+        <p><strong>Course:</strong> Backend Development</p>
+        <p><strong>Experiment:</strong> 1</p>
+        <p><strong>Date:</strong> 29 August 2026</p>
+    </div>
+</header>
+
+    <!-- NAVIGATION: Semantic HTML5 element -->
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#elements">Elements</a></li>
+            <li><a href="#lists">Lists</a></li>
+            <li><a href="#table">Table</a></li>
+            <li><a href="#form">Form</a></li>
+            <li><a href="#media">Multimedia</a></li>
+            <li><a href="#dom">DOM</a></li>
+        </ul>
+    </nav>
+
+    <!-- MAIN: Semantic HTML5 element -->
+    <main>
+
+        <!-- SECTION -->
+        <section id="introduction">
+            <h2>1. Introduction to HTML5</h2>
+
+            <p>
+                <strong>HTML5</strong> is the modern standard for creating
+                structured and interactive web pages.
+            </p>
+
+            <p>
+                It provides semantic elements, multimedia support, modern
+                form controls and APIs that improve accessibility and
+                user experience.
+            </p>
+
+            <blockquote>
+                HTML5 helps developers create meaningful, accessible and
+                responsive web pages.
+            </blockquote>
+        </section>
+
+        <!-- ARTICLE -->
+        <article id="elements">
+            <h2>2. HTML5 Elements</h2>
+
+            <p>
+                HTML5 provides many elements for organizing and presenting
+                content.
+            </p>
+
+            <div class="element-grid">
+
+                <div class="element-card">
+                    <strong>Heading</strong>
+                    <p>h1 to h6 are used for headings.</p>
+                </div>
+
+                <div class="element-card">
+                    <strong>Paragraph</strong>
+                    <p>The p element represents a paragraph.</p>
+                </div>
+
+                <div class="element-card">
+                    <strong>Emphasis</strong>
+                    <p>
+                        <em>Emphasized</em> and
+                        <strong>important</strong> text.
+                    </p>
+                </div>
+
+                <div class="element-card">
+                    <strong>Abbreviation</strong>
+                    <p>
+                        <abbr title="HyperText Markup Language">
+                            HTML
+                        </abbr>
+                    </p>
+                </div>
+
+                <div class="element-card">
+                    <strong>Time</strong>
+                    <p>
+                        Assignment date:
+                        <time datetime="2026-08-29">
+                            August 29, 2026
+                        </time>
+                    </p>
+                </div>
+
+                <div class="element-card">
+                    <strong>Mark</strong>
+                    <p>This is <mark>highlighted text</mark>.</p>
+                </div>
+
+            </div>
+
+            <h3>HTML5 Semantic Structure</h3>
+
+            <p>
+                Important semantic elements include
+                <code>header</code>,
+                <code>nav</code>,
+                <code>main</code>,
+                <code>section</code>,
+                <code>article</code>,
+                <code>aside</code> and
+                <code>footer</code>.
+            </p>
+        </article>
+
+        <!-- ASIDE -->
+        <aside>
+            <h2>3. HTML4 vs HTML5</h2>
+
+            <p>
+                HTML5 introduced more meaningful semantic elements compared
+                with older HTML structures.
+            </p>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>HTML4</th>
+                            <th>HTML5</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>div-based layout</td>
+                            <td>Semantic elements</td>
+                        </tr>
+                        <tr>
+                            <td>Limited multimedia support</td>
+                            <td>Native audio and video</td>
+                        </tr>
+                        <tr>
+                            <td>Fewer input types</td>
+                            <td>Modern form input types</td>
+                        </tr>
+                        <tr>
+                            <td>Less semantic meaning</td>
+                            <td>Improved accessibility and SEO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </aside>
+
+        <!-- LISTS -->
+        <section id="lists">
+            <h2>4. Lists</h2>
+
+            <h3>Unordered List</h3>
+
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+
+            <ol>
+                <li>Create HTML structure</li>
+                <li>Add styling</li>
+                <li>Test the webpage</li>
+            </ol>
+
+            <h3>Description List</h3>
+
+            <dl>
+                <dt><strong>HTML</strong></dt>
+                <dd>Language used to structure web pages.</dd>
+
+                <dt><strong>CSS</strong></dt>
+                <dd>Language used to style web pages.</dd>
+
+                <dt><strong>JavaScript</strong></dt>
+                <dd>Programming language used to add interactivity.</dd>
+            </dl>
+        </section>
+
+        <!-- TABLE -->
+        <section id="table">
+            <h2>5. HTML5 Element Reference</h2>
+
+            <div class="table-container">
+                <table>
+                    <caption>
+                        Common HTML5 elements and their purposes
+                    </caption>
+
+                    <thead>
+                        <tr>
+                            <th>Element</th>
+                            <th>Purpose</th>
+                            <th>Semantic?</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>header</td>
+                            <td>Defines introductory content</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <td>nav</td>
+                            <td>Defines navigation links</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <td>section</td>
+                            <td>Groups related content</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <td>article</td>
+                            <td>Defines independent content</td>
+                            <td>Yes</td>
+                        </tr>
+
+                        <tr>
+                            <td>footer</td>
+                            <td>Defines footer information</td>
+                            <td>Yes</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                HTML5 semantic elements improve document
+                                structure and accessibility.
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </section>
+
+        <!-- FORM -->
+        <section id="form">
+            <h2>6. HTML5 Form Input Types</h2>
+
+            <form action="#" method="post">
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="fullName">Full Name</label>
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                    <br>
+
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="example@email.com"
+                        required
+                    >
+
+                    <br>
+
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        minlength="8"
+                        placeholder="Minimum 8 characters"
+                    >
+
+                    <br>
+
+                    <label for="phone">Phone Number</label>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter phone number"
+                    >
+
+                    <br>
+
+                    <label for="website">Website</label>
+                    <input
+                        type="url"
+                        id="website"
+                        name="website"
+                        placeholder="Enter website URL"
+                    >
+                </fieldset>
+
+                <fieldset>
+                    <legend>Additional Information</legend>
+
+                    <label for="age">Age</label>
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        min="1"
+                        max="100"
+                    >
+
+                    <br>
+
+                    <label for="birthDate">Date of Birth</label>
+                    <input
+                        type="date"
+                        id="birthDate"
+                        name="birthDate"
+                    >
+
+                    <br>
+
+                    <label for="meetingTime">Preferred Time</label>
+                    <input
+                        type="time"
+                        id="meetingTime"
+                        name="meetingTime"
+                    >
+
+                    <br>
+
+                    <label for="month">Preferred Month</label>
+                    <input
+                        type="month"
+                        id="month"
+                        name="month"
+                    >
+
+                    <br>
+
+                    <label for="week">Preferred Week</label>
+                    <input
+                        type="week"
+                        id="week"
+                        name="week"
+                    >
+
+                    <br>
+
+                    <label for="color">Favorite Color</label>
+                    <input
+                        type="color"
+                        id="color"
+                        name="color"
+                        value="#2563eb"
+                    >
+
+                    <br>
+
+                    <label for="search">Search</label>
+                    <input
+                        type="search"
+                        id="search"
+                        name="search"
+                        placeholder="Search..."
+                    >
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+
+                    <label>Learning Mode</label>
+
+                    <div class="radio-group">
+                        <label>
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="online"
+                            >
+                            Online
+                        </label>
+
+                        <label>
+                            <input
+                                type="radio"
+                                name="mode"
+                                value="offline"
+                            >
+                            Offline
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <label>Topics</label>
+
+                    <div class="checkbox-group">
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="topic"
+                                value="html"
+                            >
+                            HTML
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="topic"
+                                value="css"
+                            >
+                            CSS
+                        </label>
+
+                        <label>
+                            <input
+                                type="checkbox"
+                                name="topic"
+                                value="javascript"
+                            >
+                            JavaScript
+                        </label>
+                    </div>
+
+                    <br>
+
+                    <label for="course">Select Course</label>
+
+                    <select id="course" name="course">
+                        <option value="">Choose a course</option>
+                        <option value="web">Web Development</option>
+                        <option value="programming">Programming</option>
+                        <option value="database">Database</option>
+                    </select>
+
+                    <br>
+
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        placeholder="Enter your message"
+                    ></textarea>
+
+                </fieldset>
+
+                <button type="submit">Submit Form</button>
+                <button type="reset">Reset Form</button>
+
+            </form>
+        </section>
+
+        <!-- MULTIMEDIA -->
+        <section id="media">
+            <h2>7. HTML5 Multimedia</h2>
+
+            <div class="media-container">
+
+                <article>
+                    <h3>Audio</h3>
+
+                    <p>
+                        The HTML5 audio element provides native audio
+                        playback.
+                    </p>
+
+                    <audio controls>
+                        <source src="sample-audio.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+
+                    <small>
+                        Add a file named
+                        <strong>sample-audio.mp3</strong>
+                        to this project folder to test the audio player.
+                    </small>
+                </article>
+
+                <article>
+                    <h3>Video</h3>
+
+                    <p>
+                        The HTML5 video element provides native video
+                        playback.
+                    </p>
+
+                    <video controls width="640">
+                        <source src="sample-video.mp4" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+
+                    <small>
+                        Add a file named
+                        <strong>sample-video.mp4</strong>
+                        to this project folder to test the video player.
+                    </small>
+                </article>
+
+            </div>
+
+            <figure>
+                <img
+                   src="sample-image.svg"
+                   alt="HTML5 Web Development experiment banner"
+                   width="800"
+                    height="300"
+                >
+                <figcaption>
+                    Figure: Example of an image with an accessible caption.
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- DETAILS -->
+        <section>
+            <h2>8. Additional HTML5 Features</h2>
+
+            <details>
+                <summary>Click to learn about semantic HTML</summary>
+
+                <p>
+                    Semantic HTML gives meaning to the structure of a
+                    webpage. Elements such as header, nav, main, section,
+                    article, aside and footer help browsers, search engines
+                    and assistive technologies understand the content.
+                </p>
+            </details>
+
+            <details>
+                <summary>Click to view sample code</summary>
+
+                <pre><code>&lt;header&gt;
+    &lt;h1&gt;My HTML5 Page&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;section&gt;
+        &lt;h2&gt;Content&lt;/h2&gt;
+    &lt;/section&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;HTML5 Demonstration&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+            </details>
+        </section>
+
+        <!-- DOM -->
+        <section id="dom">
+            <h2>9. Document Object Model (DOM)</h2>
+
+            <p id="domMessage">
+                The DOM represents an HTML document as a tree of objects.
+            </p>
+
+            <button type="button" onclick="changeDOMMessage()">
+                Demonstrate DOM Manipulation
+            </button>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            &copy; 2026 HTML5 Elements Demonstration
+        </p>
+
+        <p>
+            Created as part of Backend Development Laboratory.
+        </p>
+
+        <p>
+            <a href="#introduction">Back to Top</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript for DOM demonstration -->
+    <script>
+        function changeDOMMessage() {
+            const message = document.getElementById("domMessage");
+
+            message.textContent =
+                "The DOM was successfully modified using JavaScript!";
+        }
+    </script>
+
+</body>
+</html>
